@@ -30,7 +30,7 @@
                     </div>
                     <div class="form-group">
                         <label for="" class="avatar-label">用户头像</label>
-                        <input type="file" name="avatar">
+                        <input type="file" name="avatar" accept = "image/*">
 
                         @if($user->avatar)
                             <br>
