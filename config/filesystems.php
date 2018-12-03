@@ -49,8 +49,8 @@ return [
         ],
         'admin' => [
             'driver' => 'local',
-            'root' => public_path('uploads/admin'),
-            'url' => env('APP_URL').'/uploads/admin',
+            'root' => public_path('uploads/admin'),//存储路径
+            'url' => env('APP_URL').'/uploads/admin',//显示路径
         ],//定义文件路径
 
         'public' => [
