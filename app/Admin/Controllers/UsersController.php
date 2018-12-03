@@ -155,7 +155,7 @@ class UsersController extends Controller
             if ($form->password && $form->model()->password != $form->password) {
                 $form->password = bcrypt($form->password);
             }
-        });
+        });//设置加密
         return $form;
     }
 }

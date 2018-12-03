@@ -13,4 +13,6 @@ Route::group([
     $router->get('/', 'HomeController@index');
     $router->resource('users', 'UsersController');
     $router->resource('topics', 'TopicsController');
+    $router->resource('replies', 'RepliesController');
+    $router->resource('categories', 'CategoriesController');
 });
