@@ -85,9 +85,10 @@ class UsersController extends Controller
         $grid->name('Name');
         $grid->email('Email');
         $grid->password('Password');
-        $grid->column('avatar','头像')->display(function ($path){
-        return '<img style="width:100px;height:100px;" src="'.$path.'"/>';
-    });;
+        $grid->column('avatar', '头像')->display(function ($path) {
+            return '<img style="width:100px;height:100px;" src="'. $path.'"/>';
+        });
+        ;
         $grid->introduction('Introduction');
         $grid->notification_count('Notification count');
         $grid->created_at('Created at');

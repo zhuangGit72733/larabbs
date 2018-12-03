@@ -58,7 +58,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(Reply::class);
     }
-//    public function getAvatarAttribute($v)
+    //    public function getAvatarAttribute($v)
 //        //修改器定义image的文件路径 ,
 //        //数据库有_的字段更改为驼峰命名
 //        //config文件夹中(filesystems.php).disks.custom.url
@@ -71,13 +71,16 @@ class User extends Authenticatable
 //    }
     public function setAvatarAttribute($path)
     {
-        // 如果不是 `http` 子串开头，那就是从后台上传的，需要补全 URL
-        if ( ! starts_with($path, 'http')) {
+        // 如果不是 `http` 子串开头，那就是从后台上传的，需要补全 URLs
+        if (!starts_with($path, 'http')) {
 
             // 拼接完整的 URL
             $path = config('app.url') . "/uploads/images/avatars/$path";
         }
 
         $this->attributes['avatar'] = $path;
+    }
+    public function getAvatarAttribute($path)
+    {
     }
 }
