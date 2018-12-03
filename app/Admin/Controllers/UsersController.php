@@ -9,6 +9,7 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
+use App\Handlers\ImageUploadHandler;
 
 class UsersController extends Controller
 {
@@ -86,7 +87,7 @@ class UsersController extends Controller
         $grid->email('Email');
         $grid->password('Password');
         $grid->column('avatar', '头像')->display(function ($path) {
-            return '<img style="width:100px;height:100px;" src="'. $path.'"/>';
+            return '<img style="width:100px;height:100px;" src="'.$path.'"/>';
         });
         ;
         $grid->introduction('Introduction');
