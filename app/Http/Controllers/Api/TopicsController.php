@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\User;
 use App\Models\Topic;
 use Illuminate\Http\Request;
 use App\Transformers\TopicTransformer;
@@ -64,5 +65,12 @@ class TopicsController extends Controller
 //             }
 //         }
 //     }
+    public function userIndex(User $user, Request $request)
+    {
+        $topics = $user->topics()->recent()
+            ->paginate(20);
+
+        return $this->response->paginator($topics, new TopicTransformer());
+    }
 }
 
